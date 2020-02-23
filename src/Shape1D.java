@@ -1,4 +1,5 @@
-import java.awt.*;
+import java.awt.Point;
+import java.awt.Color;
 
 public abstract class Shape1D extends Shape {
     private boolean hasDirection;

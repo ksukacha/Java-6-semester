@@ -1,4 +1,6 @@
-import java.awt.*;
+import java.awt.Point;
+import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class Ray extends LineSegment {
     public Ray(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
