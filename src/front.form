@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="App">
+  <grid id="6c6c" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="5" y="5" width="1437" height="590"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <toolbar id="4ab44" binding="tools">
+        <constraints border-constraint="North"/>
+        <properties>
+          <orientation value="0"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="50cda" binding="figuresPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="6e19b" class="javax.swing.JToggleButton" binding="segmentButton">
+                <constraints/>
+                <properties>
+                  <text value="Segment"/>
+                </properties>
+              </component>
+              <component id="ede29" class="javax.swing.JToggleButton" binding="rayButton">
+                <constraints/>
+                <properties>
+                  <text value="Ray"/>
+                </properties>
+              </component>
+              <component id="a3cc2" class="javax.swing.JToggleButton" binding="lineButton">
+                <constraints/>
+                <properties>
+                  <text value="Line"/>
+                </properties>
+              </component>
+              <component id="e3289" class="javax.swing.JToggleButton" binding="MultiLineSegment">
+                <constraints/>
+                <properties>
+                  <text value="MultiLineSegment"/>
+                </properties>
+              </component>
+              <component id="7876c" class="javax.swing.JToggleButton" binding="ellipseButton">
+                <constraints/>
+                <properties>
+                  <alignmentX value="0.5"/>
+                  <hideActionText value="false"/>
+                  <iconTextGap value="4"/>
+                  <text value="Ellipse"/>
+                </properties>
+              </component>
+              <component id="151fa" class="javax.swing.JToggleButton" binding="Circle">
+                <constraints/>
+                <properties>
+                  <alignmentX value="0.5"/>
+                  <hideActionText value="false"/>
+                  <iconTextGap value="4"/>
+                  <text value="Circle"/>
+                </properties>
+              </component>
+              <component id="8934f" class="javax.swing.JToggleButton" binding="regularPolygonButton">
+                <constraints/>
+                <properties>
+                  <text value="Regular Polygon"/>
+                </properties>
+              </component>
+              <component id="c5010" class="javax.swing.JToggleButton" binding="rhombusButton">
+                <constraints/>
+                <properties>
+                  <text value="Rhomb"/>
+                </properties>
+              </component>
+              <component id="b4cdf" class="javax.swing.JToggleButton" binding="RightAngledTriangle">
+                <constraints/>
+                <properties>
+                  <text value="RightAngledTriangle"/>
+                </properties>
+              </component>
+              <component id="562f6" class="javax.swing.JToggleButton" binding="IsoscelesTriangle">
+                <constraints/>
+                <properties>
+                  <text value="IsoscelesTriangle"/>
+                </properties>
+              </component>
+              <component id="2f293" class="javax.swing.JToggleButton" binding="rectangleButton">
+                <constraints/>
+                <properties>
+                  <text value="Rectangle"/>
+                </properties>
+              </component>
+              <component id="5f0b7" class="javax.swing.JToggleButton" binding="polygonButton">
+                <constraints/>
+                <properties>
+                  <text value="Polygon"/>
+                </properties>
+              </component>
+              <component id="b703f" class="javax.swing.JToggleButton" binding="parallelogramButton">
+                <constraints/>
+                <properties>
+                  <text value="Parallelogram"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="a19e4" binding="colorPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="45a3b" class="javax.swing.JButton" binding="BorderColor">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="BorderColor"/>
+                  <label value="BorderButton"/>
+                  <text value="BorderButton"/>
+                </properties>
+              </component>
+              <component id="f3732" class="javax.swing.JButton" binding="InnerColor">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <actionCommand value="InnerColor"/>
+                  <label value="InnerColor"/>
+                  <text value="InnerColor"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </toolbar>
+      <grid id="9c36d" binding="drawPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>

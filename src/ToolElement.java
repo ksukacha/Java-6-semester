@@ -1,0 +1,15 @@
+public enum ToolElement {
+    SEGMENT,
+    RAY,
+    LINE,
+    MULTI_LINE_SEGMENT,
+    ELLIPSE,
+    CIRCLE,
+    POLYGON,
+    REGULAR_POLYGON,
+    RIGHT_ANGLED_TRIANGLE,
+    ISOSCELES_TRIANGLE,
+    RECTANGLE,
+    PARALLELOGRAM,
+    RHOMBUS
+}
