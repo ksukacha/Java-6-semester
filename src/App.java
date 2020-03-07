@@ -1,10 +1,4 @@
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JToolBar;
-import javax.swing.JToggleButton;
-import javax.swing.JButton;
-import javax.swing.WindowConstants;
-import javax.swing.JDialog;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
@@ -41,11 +35,26 @@ public class App extends JFrame {
     private ToolElement toolElement;
     private JDialog numSidesJDialog;
 
-    //todo change the tool layout (too wide)
-    public App() {
+    private App() {
         figureFactory = new FigureFactory();
         shapes = new ArrayList<>();
         toolElement = ToolElement.LINE;
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(segmentButton);
+        group.add(rayButton);
+        group.add(lineButton);
+        group.add(multiLineSegmentButton);
+        group.add(circleButton);
+        group.add(ellipseButton);
+        group.add(parallelogramButton);
+        group.add(rhombusButton);
+        group.add(rectangleButton);
+        group.add(rightAngledTriangleButton);
+        group.add(isoscelesTriangleButton);
+        group.add(regularPolygonButton);
+        group.add(polygonButton);
+
         setContentPane(mainPanel);
         setUpGUI();
         setSize(1400, 700);
