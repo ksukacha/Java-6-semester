@@ -63,13 +63,22 @@ public class App extends JFrame {
     }
 
     public void setUpGUI() {
-        rhombusButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                toolElement = ToolElement.RHOMBUS;
-            }
-        });
-        //todo add the rest
+
+        segmentButton.addActionListener(e -> toolElement = ToolElement.SEGMENT);
+        rayButton.addActionListener(e -> toolElement = ToolElement.RAY);
+        lineButton.addActionListener(e -> toolElement = ToolElement.LINE);
+        multiLineSegmentButton.addActionListener(e -> toolElement = ToolElement.MULTI_LINE_SEGMENT);
+
+        circleButton.addActionListener(e -> toolElement = ToolElement.CIRCLE);
+        ellipseButton.addActionListener(e -> toolElement = ToolElement.ELLIPSE);
+        parallelogramButton.addActionListener(e -> toolElement = ToolElement.PARALLELOGRAM);
+        rhombusButton.addActionListener(e -> toolElement = ToolElement.RHOMBUS);
+        rectangleButton.addActionListener(e -> toolElement = ToolElement.RECTANGLE);
+        rightAngledTriangleButton.addActionListener(e -> toolElement = ToolElement.RIGHT_ANGLED_TRIANGLE);
+        isoscelesTriangleButton.addActionListener(e -> toolElement = ToolElement.ISOSCELES_TRIANGLE);
+        regularPolygonButton.addActionListener(e -> toolElement = ToolElement.REGULAR_POLYGON);
+        polygonButton.addActionListener(e -> toolElement = ToolElement.POLYGON);
+
 
         drawPanel.addMouseListener(new MouseAdapter() {
             @Override
