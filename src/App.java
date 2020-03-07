@@ -37,7 +37,7 @@ public class App extends JFrame {
         group.add(polygonButton);
 
         Enumeration<AbstractButton> enumeration = group.getElements();
-        while (enumeration.hasMoreElements()){
+        while (enumeration.hasMoreElements()) {
             enumeration.nextElement().addActionListener(e -> mousePressHistory.clear());
         }
 
@@ -91,12 +91,32 @@ public class App extends JFrame {
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     switch (toolElement) {
                         case SEGMENT:
+                            if (mousePressHistory.size() == 2) {
+                                shapes.add(figureFactory.buildLineSegment(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                mousePressHistory.clear();
+                            }
                             break;
                         case RAY:
+                            if (mousePressHistory.size() == 2) {
+                                shapes.add(figureFactory.buildRay(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                mousePressHistory.clear();
+                            }
                             break;
                         case LINE:
+                            if (mousePressHistory.size() == 2) {
+                                shapes.add(figureFactory.buildLine(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                mousePressHistory.clear();
+                            }
                             break;
                         case MULTI_LINE_SEGMENT:
+                            if (mousePressHistory.size() == 2) {
+                                shapes.add(figureFactory.buildMultilineSegment(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                            } else if (mousePressHistory.size() == 3) {
+                                FigureModifier.addSegmentToMultilineSegment(
+                                        shapes.get(shapes.size() - 1),
+                                        figureFactory.buildLineSegment(mousePressHistory.get(1), null, false, mousePressHistory.get(2)));
+                                mousePressHistory.remove(0);
+                            }
                             break;
 
                         case CIRCLE:

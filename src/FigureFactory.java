@@ -11,8 +11,8 @@ public class FigureFactory {
     public Shape buildLine(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
         return new Line(theCenter, borderColor, hasDirection, secondPoint);
     }
-    public Shape buildMultilineSegment(Point theCenter, Color borderColor, boolean hasDirection, List<LineSegment> lineSegments) {
-        return new MultilineSegment(theCenter, borderColor, hasDirection, lineSegments);
+    public Shape buildMultilineSegment(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
+        return new MultilineSegment(theCenter, borderColor, hasDirection, secondPoint);
     }
     public Shape buildEllipse(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
         return new Ellipse(theCenter, borderColor, innerColor, firstPoint, secondPoint);
