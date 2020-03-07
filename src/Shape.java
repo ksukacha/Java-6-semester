@@ -5,6 +5,8 @@ import java.awt.Graphics2D;
 public abstract class Shape {
     private Point theCenter;
     private Color borderColor;
+
+    
     public Shape(Point theCenter, Color borderColor) {
         this.theCenter = theCenter;
         this.borderColor = borderColor;
