@@ -1,45 +1,26 @@
 import javax.swing.*;
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 public class App extends JFrame {
-    private FigureFactory figureFactory;
-    private List<Shape> shapes;
-
-    private JPanel mainPanel;
-    private JPanel drawPanel;
-
-    private JToggleButton segmentButton;
-    private JToggleButton rayButton;
-    private JToggleButton lineButton;
-    private JToggleButton multiLineSegmentButton;
-
-    private JToggleButton circleButton;
-    private JToggleButton ellipseButton;
-    private JToggleButton parallelogramButton;
-    private JToggleButton rhombusButton;
-    private JToggleButton rectangleButton;
-    private JToggleButton rightAngledTriangleButton;
-    private JToggleButton isoscelesTriangleButton;
-    private JToggleButton regularPolygonButton;
-    private JToggleButton polygonButton;
-
-    private JButton borderColorButton;
-    private JButton innerColorButton;
-
+    private FigureFactory figureFactory = new FigureFactory();
+    private List<Shape> shapes = new ArrayList<>();
+    private List<Point> mousePressHistory = new ArrayList<>();
     private ToolElement toolElement;
+
+    private JPanel mainPanel, drawPanel;
+    private JToggleButton segmentButton, rayButton, lineButton, multiLineSegmentButton;
+    private JToggleButton circleButton, ellipseButton, parallelogramButton, rhombusButton, rectangleButton,
+            rightAngledTriangleButton, isoscelesTriangleButton, regularPolygonButton, polygonButton;
+    private JButton borderColorButton, innerColorButton;
     private JDialog numSidesJDialog;
 
     private App() {
-        figureFactory = new FigureFactory();
-        shapes = new ArrayList<>();
-        toolElement = ToolElement.LINE;
-
         ButtonGroup group = new ButtonGroup();
         group.add(segmentButton);
         group.add(rayButton);
@@ -55,6 +36,14 @@ public class App extends JFrame {
         group.add(regularPolygonButton);
         group.add(polygonButton);
 
+        Enumeration<AbstractButton> enumeration = group.getElements();
+        while (enumeration.hasMoreElements()){
+            enumeration.nextElement().addActionListener(e -> mousePressHistory.clear());
+        }
+
+        toolElement = ToolElement.LINE;
+        lineButton.setSelected(true);
+
         setContentPane(mainPanel);
         setUpGUI();
         setSize(1400, 700);
@@ -62,7 +51,7 @@ public class App extends JFrame {
         setVisible(true);
     }
 
-    public void setUpGUI() {
+    private void setUpGUI() {
 
         segmentButton.addActionListener(e -> toolElement = ToolElement.SEGMENT);
         rayButton.addActionListener(e -> toolElement = ToolElement.RAY);
@@ -84,6 +73,7 @@ public class App extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                mousePressHistory.add(e.getPoint());
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     switch (toolElement) {
                         case SEGMENT:
