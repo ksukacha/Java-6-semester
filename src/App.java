@@ -84,7 +84,37 @@ public class App extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                //todo add switch for current tool element
+                if (SwingUtilities.isLeftMouseButton(e)) {
+                    switch (toolElement) {
+                        case SEGMENT:
+                            break;
+                        case RAY:
+                            break;
+                        case LINE:
+                            break;
+                        case MULTI_LINE_SEGMENT:
+                            break;
+
+                        case CIRCLE:
+                            break;
+                        case ELLIPSE:
+                            break;
+                        case PARALLELOGRAM:
+                            break;
+                        case RHOMBUS:
+                            break;
+                        case RECTANGLE:
+                            break;
+                        case RIGHT_ANGLED_TRIANGLE:
+                            break;
+                        case ISOSCELES_TRIANGLE:
+                            break;
+                        case REGULAR_POLYGON:
+                            break;
+                        case POLYGON:
+                            break;
+                    }
+                }
             }
 
             @Override
