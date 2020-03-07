@@ -15,28 +15,30 @@ import java.util.List;
 
 public class App extends JFrame {
     private FigureFactory figureFactory;
+    private List<Shape> shapes;
+
     private JPanel mainPanel;
-    private JPanel figuresPanel;
-    private JPanel colorPanel;
     private JPanel drawPanel;
-    private JToolBar tools;
-    private JToggleButton rectangleButton;
-    private JToggleButton rayButton;
-    private JToggleButton regularPolygonButton;
-    private JToggleButton ellipseButton;
+
     private JToggleButton segmentButton;
+    private JToggleButton rayButton;
     private JToggleButton lineButton;
-    private JToggleButton polygonButton;
+    private JToggleButton multiLineSegmentButton;
+
+    private JToggleButton circleButton;
+    private JToggleButton ellipseButton;
     private JToggleButton parallelogramButton;
     private JToggleButton rhombusButton;
-    private JToggleButton MultiLineSegment;
-    private JToggleButton Circle;
-    private JToggleButton RightAngledTriangle;
-    private JToggleButton IsoscelesTriangle;
-    private JButton BorderColor;
-    private JButton InnerColor;
+    private JToggleButton rectangleButton;
+    private JToggleButton rightAngledTriangleButton;
+    private JToggleButton isoscelesTriangleButton;
+    private JToggleButton regularPolygonButton;
+    private JToggleButton polygonButton;
+
+    private JButton borderColorButton;
+    private JButton innerColorButton;
+
     private ToolElement toolElement;
-    private List<Shape> shapes;
     private JDialog numSidesJDialog;
 
     //todo change the tool layout (too wide)
