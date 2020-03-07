@@ -51,6 +51,20 @@ public class App extends JFrame {
         setVisible(true);
     }
 
+    // for custom UI objects creation (need to set flag "custom create" in front.form)
+    private void createUIComponents() {
+        drawPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics graphics) {
+                super.paintComponent(graphics);
+                Graphics2D graphics2D = (Graphics2D) graphics;
+                graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                for (Shape shape : shapes)
+                    shape.draw(graphics2D);
+            }
+        };
+    }
+
     private void setUpGUI() {
 
         segmentButton.addActionListener(e -> toolElement = ToolElement.SEGMENT);
@@ -104,6 +118,7 @@ public class App extends JFrame {
                         case POLYGON:
                             break;
                     }
+                    repaint();
                 }
             }
 

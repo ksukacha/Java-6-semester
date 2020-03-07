@@ -200,7 +200,7 @@
           </grid>
         </children>
       </toolbar>
-      <grid id="9c36d" binding="drawPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="9c36d" binding="drawPanel" custom-create="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="Center"/>
         <properties/>
         <border type="none"/>
