@@ -20,22 +20,22 @@ public class FigureFactory {
     public Shape buildCircle(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
         return new Circle(theCenter, borderColor, innerColor, firstPoint, secondPoint);
     }
-    public Shape buildRegularPolygon(Point theCenter, Color borderColor, Color innerColor, List<Point> points, int numSides) {
-        return new RegularPolygon(theCenter,borderColor,innerColor, points, numSides);
+    public Shape buildRegularPolygon(Point theCenter, Point secondPoint, int numSides, Color borderColor, Color innerColor) {
+        return new RegularPolygon(theCenter, secondPoint, numSides, borderColor,innerColor);
     }
-    public Shape buildRightAngledTriangle(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        return new RightAngledTriangle(theCenter,borderColor,innerColor, points);
+    public Shape buildRightAngledTriangle(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        return new RightAngledTriangle(theCenter,  points, borderColor,innerColor);
     }
-    public Shape buildIsoscelesTriangle(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        return new IsoscelesTriangle(theCenter,borderColor,innerColor, points);
+    public Shape buildIsoscelesTriangle(Point theCenter,  List<Point> points, Color borderColor, Color innerColor) {
+        return new IsoscelesTriangle(theCenter, points, borderColor,innerColor);
     }
-    public Shape buildRectangle(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        return new Rectangle(theCenter,borderColor,innerColor, points);
+    public Shape buildRectangle(Point theCenter,  List<Point> points, Color borderColor, Color innerColor) {
+        return new Rectangle(theCenter, points, borderColor,innerColor);
     }
-    public Shape buildRhombus(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        return new Rhombus(theCenter,borderColor,innerColor, points);
+    public Shape buildRhombus(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        return new Rhombus(theCenter,points, borderColor,innerColor);
     }
-    public Shape buildParallelogram(Point theCenter, Color borderColor, Color innerColor, List<Point> points){
-        return new Parallelogram(theCenter,borderColor,innerColor, points);
+    public Shape buildParallelogram(Point theCenter, List<Point> points, Color borderColor, Color innerColor){
+        return new Parallelogram(theCenter, points, borderColor,innerColor);
     }
 }
