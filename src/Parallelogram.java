@@ -3,9 +3,9 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.List;
 
-public class Parallelogram extends Polygon {
-    public Parallelogram(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        super(theCenter, borderColor, innerColor, points);
+public class Parallelogram extends IrregularPolygon {
+    public Parallelogram(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        super(theCenter, points, borderColor, innerColor);
     }
 
     @Override

@@ -1,13 +1,15 @@
 import java.awt.Point;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegularPolygon extends Polygon {
     private int numSides;
 
-    public RegularPolygon(Point theCenter, Color borderColor, Color innerColor, List<Point> points, int numSides) {
-        super(theCenter, borderColor, innerColor, points);
+    public RegularPolygon(Point theCenter, Point secondPoint, int numSides, Color borderColor, Color innerColor) {
+        super(theCenter, new ArrayList<>(), borderColor, innerColor);
+        this.getPoints().add(secondPoint);
         this.numSides = numSides;
     }
 

@@ -3,9 +3,9 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.List;
 
-public class RightAngledTriangle extends Polygon {
-    public RightAngledTriangle(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        super(theCenter, borderColor, innerColor, points);
+public class RightAngledTriangle extends IrregularPolygon {
+    public RightAngledTriangle(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        super(theCenter, points, borderColor, innerColor);
     }
 
     @Override
