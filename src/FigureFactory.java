@@ -14,11 +14,11 @@ public class FigureFactory {
     public Shape buildMultilineSegment(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
         return new MultilineSegment(theCenter, borderColor, hasDirection, secondPoint);
     }
-    public Shape buildEllipse(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
-        return new Ellipse(theCenter, borderColor, innerColor, firstPoint, secondPoint);
+    public Shape buildEllipse(Point theCenter, Point firstPoint, Point secondPoint, Color borderColor, Color innerColor) {
+        return new Ellipse(theCenter, firstPoint, secondPoint, borderColor, innerColor);
     }
-    public Shape buildCircle(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
-        return new Circle(theCenter, borderColor, innerColor, firstPoint, secondPoint);
+    public Shape buildCircle(Point theCenter, Point firstPoint, Color borderColor, Color innerColor) {
+        return new Circle(theCenter, firstPoint, borderColor, innerColor);
     }
     public Shape buildRegularPolygon(Point theCenter, Point secondPoint, int numSides, Color borderColor, Color innerColor) {
         return new RegularPolygon(theCenter, secondPoint, numSides, borderColor,innerColor);

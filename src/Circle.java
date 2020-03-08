@@ -3,8 +3,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Circle extends Ellipse {
-    public Circle(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
-        super(theCenter, borderColor, innerColor, firstPoint, secondPoint);
+    public Circle(Point theCenter, Point firstPoint, Color borderColor, Color innerColor) {
+        super(theCenter, firstPoint, firstPoint, borderColor, innerColor);
     }
 
     @Override
