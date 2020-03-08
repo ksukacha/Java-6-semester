@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.awt.Point;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -5,10 +7,8 @@ import java.awt.Graphics2D;
 public class Ellipse extends Shape2D {
     private Point firstPoint;
     private Point secondPoint;
-    private double smallFocus;
-    private double bigFocus;
 
-    public Ellipse(Point theCenter, Color borderColor, Color innerColor, Point firstPoint, Point secondPoint) {
+    public Ellipse(Point theCenter, Point firstPoint, Point secondPoint, Color borderColor, Color innerColor) {
         super(theCenter, borderColor, innerColor);
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
@@ -16,7 +16,9 @@ public class Ellipse extends Shape2D {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        super.draw(graphics2D);
+        Pair<Double, Double> focuses = countFocuses();
+        graphics2D.drawOval((int)(this.getLocation().x - focuses.getKey()), (int)(this.getLocation().y - focuses.getValue()),
+                (int)(2*focuses.getKey()), (int)(2*focuses.getValue()));
     }
 
     @Override
@@ -32,11 +34,19 @@ public class Ellipse extends Shape2D {
         this.secondPoint = secondPoint;
     }
 
-    public void setSmallFocus(double smallFocus) {
-        this.smallFocus = smallFocus;
+    public Point getFirstPoint() {
+        return this.firstPoint;
     }
 
-    public void setBigFocus(double bigFocus) {
-        this.bigFocus = bigFocus;
+    public Point getSecondPoint() {
+        return this.secondPoint;
+    }
+
+    protected Pair<Double, Double> countFocuses() {
+        double b = Math.sqrt((Math.pow(secondPoint.x - this.getLocation().x, 2) * Math.pow(firstPoint.y - this.getLocation().y, 2) -
+                              Math.pow(firstPoint.x - this.getLocation().x, 2) * Math.pow(secondPoint.y - this.getLocation().y, 2)) /
+                             (Math.pow(secondPoint.x - this.getLocation().x, 2) - Math.pow(firstPoint.x - this.getLocation().x, 2)));
+        double a = Math.sqrt(Math.pow(firstPoint.x - this.getLocation().x, 2) / (1 - (Math.pow(firstPoint.y - this.getLocation().y, 2) / Math.pow(b, 2))));
+        return new Pair<>(a, b);
     }
 }

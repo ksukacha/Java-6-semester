@@ -120,8 +120,16 @@ public class App extends JFrame {
                             break;
 
                         case CIRCLE:
+                            if (mousePressHistory.size() == 2){
+                                shapes.add(figureFactory.buildCircle(mousePressHistory.get(0), mousePressHistory.get(1), null, null));
+                                mousePressHistory.clear();
+                            }
                             break;
                         case ELLIPSE:
+                            if (mousePressHistory.size() == 3){
+                                shapes.add(figureFactory.buildEllipse(mousePressHistory.get(0), mousePressHistory.get(1), mousePressHistory.get(2), null, null));
+                                mousePressHistory.clear();
+                            }
                             break;
                         case PARALLELOGRAM:
                             break;
