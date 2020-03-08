@@ -6,7 +6,7 @@ import java.util.List;
 public class Polygon extends Shape2D {
     private List<Point> points;
 
-    public Polygon(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
+    public Polygon(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
         super(theCenter, borderColor, innerColor);
         this.points = points;
     }

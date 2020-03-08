@@ -3,9 +3,9 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.List;
 
-public class IsoscelesTriangle extends RightAngledTriangle {
-    public IsoscelesTriangle(Point theCenter, Color borderColor, Color innerColor, List<Point> points) {
-        super(theCenter, borderColor, innerColor, points);
+public class IsoscelesTriangle extends IrregularPolygon {
+    public IsoscelesTriangle(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        super(theCenter, points, borderColor, innerColor);
     }
 
     @Override
