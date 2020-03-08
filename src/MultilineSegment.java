@@ -18,7 +18,9 @@ public class MultilineSegment extends Shape1D {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-
+        for(LineSegment lineSegment: lineSegments) {
+            lineSegment.draw(graphics2D);
+        }
     }
 
     @Override

@@ -12,7 +12,7 @@ public class LineSegment extends Shape1D {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-
+        graphics2D.drawLine(this.getLocation().x, this.getLocation().y, secondPoint.x, secondPoint.y);
     }
 
     @Override
