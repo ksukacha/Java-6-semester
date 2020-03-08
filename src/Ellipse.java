@@ -34,7 +34,15 @@ public class Ellipse extends Shape2D {
         this.secondPoint = secondPoint;
     }
 
-    public Pair<Double, Double> countFocuses() {
+    public Point getFirstPoint() {
+        return this.firstPoint;
+    }
+
+    public Point getSecondPoint() {
+        return this.secondPoint;
+    }
+
+    protected Pair<Double, Double> countFocuses() {
         double b = Math.sqrt((Math.pow(secondPoint.x - this.getLocation().x, 2) * Math.pow(firstPoint.y - this.getLocation().y, 2) -
                               Math.pow(firstPoint.x - this.getLocation().x, 2) * Math.pow(secondPoint.y - this.getLocation().y, 2)) /
                              (Math.pow(secondPoint.x - this.getLocation().x, 2) - Math.pow(firstPoint.x - this.getLocation().x, 2)));
