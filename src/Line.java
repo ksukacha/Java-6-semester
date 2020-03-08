@@ -9,11 +9,9 @@ public class Line extends Ray {
         if(getSecondPoint().y < getLocation().y) {
             double beta = Math.PI/2 -  Math.atan((double)Math.abs((getLocation().y - getSecondPoint().y))/Math.abs((getSecondPoint().x - getLocation().x)));
             if(getSecondPoint().x>getLocation().x) {
-                this.setTheCenter(new Point((int)(getLocation().x - getLocation().y*Math.tan(beta)), 2*getLocation().y));
-                this.setSecondPoint(new Point((int) (getLocation().x + getLocation().y * Math.tan(beta)), 0));
+                this.setTheCenter(new Point((int)(getLocation().x - 3000*Math.tan(beta)), 3000));
             }else {
-                this.setTheCenter(new Point((int)(getLocation().x + getLocation().y*Math.tan(beta)), 2*getLocation().y));
-                this.setSecondPoint(new Point((int) (getLocation().x - getLocation().y * Math.tan(beta)), 0));
+                this.setTheCenter(new Point((int)(getLocation().x + 3000*Math.tan(beta)), 3000));
             }
         } else if(getSecondPoint().y > getLocation().y) {
             double alpha = Math.atan((double)Math.abs((getLocation().y - getSecondPoint().y))/Math.abs((getSecondPoint().x - getLocation().x)));
@@ -22,12 +20,8 @@ public class Line extends Ray {
             double xToAdd = Math.tan(beta) * yToAdd;
             if(getSecondPoint().x > getLocation().x) {
                 this.setTheCenter(new Point((int) (getLocation().x - xToAdd), (int) (getLocation().y - yToAdd)));
-                this.setSecondPoint(new Point((int) (getLocation().x + xToAdd),
-                        (int) (getLocation().y + yToAdd)));
             }else {
                 this.setTheCenter(new Point((int) (getLocation().x + xToAdd), (int) (getLocation().y - yToAdd)));
-                this.setSecondPoint(new Point((int) (getLocation().x - xToAdd),
-                        (int) (getLocation().y + yToAdd)));
             }
         }
     }

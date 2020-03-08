@@ -25,7 +25,8 @@ public class LineSegment extends Shape1D {
     }
 
     public void setSecondPoint(Point secondPoint) {
-        this.secondPoint = secondPoint;
+        this.secondPoint.x = secondPoint.x;
+        this.secondPoint.y = secondPoint.y;
     }
 }
 

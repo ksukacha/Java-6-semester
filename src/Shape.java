@@ -21,7 +21,8 @@ public abstract class Shape {
     }
 
     public void setTheCenter(Point theCenter) {
-        this.theCenter = theCenter;
+        this.theCenter.x = theCenter.x;
+        this.theCenter.y = theCenter.y;
     }
 
     public void setBorderColor(Color borderColor) {

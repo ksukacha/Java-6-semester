@@ -15,8 +15,7 @@ public class Ray extends LineSegment {
         } else if(getSecondPoint().y > getLocation().y) {
            double alpha = Math.atan((double)Math.abs((getLocation().y - getSecondPoint().y))/Math.abs((getSecondPoint().x - getLocation().x)));
            double beta = Math.PI/2 -  Math.atan((double)Math.abs((getLocation().y - getSecondPoint().y))/Math.abs((getSecondPoint().x - getLocation().x)));
-           //double squareOfFirst = 0.5*getLocation().y*getLocation().y*Math.tan(beta);
-           double yToAdd = 3000;//Math.sqrt(2*squareOfFirst/Math.pow(Math.tan(beta), 3));
+           double yToAdd = 3000;
            double xToAdd = Math.tan(beta) * yToAdd;
            if(getSecondPoint().x > getLocation().x) {
                this.setSecondPoint(new Point((int) (getLocation().x + xToAdd),
