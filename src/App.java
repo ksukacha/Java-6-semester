@@ -144,6 +144,12 @@ public class App extends JFrame {
                         case REGULAR_POLYGON:
                             break;
                         case POLYGON:
+                            if (mousePressHistory.size() == 3) {
+                                shapes.add(figureFactory.buildPolygon(mousePressHistory.get(0), mousePressHistory, null, null));
+                            } else if (mousePressHistory.size() == 4){
+                                FigureModifier.addPointToPolygon(shapes.get(shapes.size() - 1), mousePressHistory.get(3));
+                                mousePressHistory.remove(0);
+                            }
                             break;
                     }
                     repaint();

@@ -23,6 +23,9 @@ public class FigureFactory {
     public Shape buildRegularPolygon(Point theCenter, Point secondPoint, int numSides, Color borderColor, Color innerColor) {
         return new RegularPolygon(theCenter, secondPoint, numSides, borderColor,innerColor);
     }
+    public Shape buildPolygon(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        return new Polygon(theCenter, points, borderColor,innerColor);
+    }
     public Shape buildRightAngledTriangle(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
         return new RightAngledTriangle(theCenter,  points, borderColor,innerColor);
     }
