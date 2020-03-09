@@ -2,17 +2,17 @@ import java.awt.*;
 import java.util.List;
 
 public class FigureFactory {
-    public Shape buildLineSegment(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
-        return new LineSegment(theCenter, borderColor, hasDirection, secondPoint);
+    public Shape buildLineSegment(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
+        return new LineSegment(theCenter, secondPoint, borderColor, hasDirection);
     }
-    public Shape buildRay(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
-        return new Ray(theCenter, borderColor, hasDirection, secondPoint);
+    public Shape buildRay(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
+        return new Ray(theCenter, secondPoint, borderColor, hasDirection);
     }
-    public Shape buildLine(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
-        return new Line(theCenter, borderColor, hasDirection, secondPoint);
+    public Shape buildLine(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
+        return new Line(theCenter, secondPoint, borderColor, hasDirection);
     }
-    public Shape buildMultilineSegment(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
-        return new MultilineSegment(theCenter, borderColor, hasDirection, secondPoint);
+    public Shape buildMultilineSegment(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
+        return new MultilineSegment(theCenter, secondPoint, borderColor, hasDirection);
     }
     public Shape buildEllipse(Point theCenter, Point firstPoint, Point secondPoint, Color borderColor, Color innerColor) {
         return new Ellipse(theCenter, firstPoint, secondPoint, borderColor, innerColor);
@@ -22,6 +22,9 @@ public class FigureFactory {
     }
     public Shape buildRegularPolygon(Point theCenter, Point secondPoint, int numSides, Color borderColor, Color innerColor) {
         return new RegularPolygon(theCenter, secondPoint, numSides, borderColor,innerColor);
+    }
+    public Shape buildPolygon(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
+        return new Polygon(theCenter, points, borderColor,innerColor);
     }
     public Shape buildRightAngledTriangle(Point theCenter, List<Point> points, Color borderColor, Color innerColor) {
         return new RightAngledTriangle(theCenter,  points, borderColor,innerColor);

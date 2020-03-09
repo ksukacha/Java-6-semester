@@ -10,16 +10,6 @@ public class Circle extends Ellipse {
     }
 
     @Override
-    public void draw(Graphics2D graphics2D) {
-        super.draw(graphics2D);
-    }
-
-    @Override
-    public void move(Point point) {
-        super.move(point);
-    }
-
-    @Override
     public Pair<Double, Double> countFocuses() {
         double radius = Math.sqrt(Math.pow(this.getFirstPoint().x - this.getLocation().x, 2) +
                                   Math.pow(this.getFirstPoint().y - this.getLocation().y, 2));

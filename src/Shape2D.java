@@ -9,14 +9,4 @@ public abstract class Shape2D extends Shape {
         super(theCenter, borderColor);
         this.innerColor = innerColor;
     }
-
-    @Override
-    public void draw(Graphics2D graphics2D) {
-
-    }
-
-    @Override
-    public void move(Point point) {
-
-    }
 }

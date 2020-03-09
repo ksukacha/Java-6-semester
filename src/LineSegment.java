@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 public class LineSegment extends Shape1D {
     private Point secondPoint;
 
-    public LineSegment(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
+    public LineSegment(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
         super(theCenter, borderColor, hasDirection);
         this.secondPoint = secondPoint;
     }

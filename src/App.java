@@ -92,29 +92,29 @@ public class App extends JFrame {
                     switch (toolElement) {
                         case SEGMENT:
                             if (mousePressHistory.size() == 2) {
-                                shapes.add(figureFactory.buildLineSegment(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                shapes.add(figureFactory.buildLineSegment(mousePressHistory.get(0), mousePressHistory.get(1), null, false));
                                 mousePressHistory.clear();
                             }
                             break;
                         case RAY:
                             if (mousePressHistory.size() == 2) {
-                                shapes.add(figureFactory.buildRay(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                shapes.add(figureFactory.buildRay(mousePressHistory.get(0), mousePressHistory.get(1), null, false));
                                 mousePressHistory.clear();
                             }
                             break;
                         case LINE:
                             if (mousePressHistory.size() == 2) {
-                                shapes.add(figureFactory.buildLine(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                shapes.add(figureFactory.buildLine(mousePressHistory.get(0), mousePressHistory.get(1), null, false));
                                 mousePressHistory.clear();
                             }
                             break;
                         case MULTI_LINE_SEGMENT:
                             if (mousePressHistory.size() == 2) {
-                                shapes.add(figureFactory.buildMultilineSegment(mousePressHistory.get(0), null, false, mousePressHistory.get(1)));
+                                shapes.add(figureFactory.buildMultilineSegment(mousePressHistory.get(0), mousePressHistory.get(1), null, false));
                             } else if (mousePressHistory.size() == 3) {
                                 FigureModifier.addSegmentToMultilineSegment(
                                         shapes.get(shapes.size() - 1),
-                                        figureFactory.buildLineSegment(mousePressHistory.get(1), null, false, mousePressHistory.get(2)));
+                                        figureFactory.buildLineSegment(mousePressHistory.get(1), mousePressHistory.get(2),null, false));
                                 mousePressHistory.remove(0);
                             }
                             break;
@@ -144,6 +144,12 @@ public class App extends JFrame {
                         case REGULAR_POLYGON:
                             break;
                         case POLYGON:
+                            if (mousePressHistory.size() == 3) {
+                                shapes.add(figureFactory.buildPolygon(mousePressHistory.get(0), mousePressHistory, null, null));
+                            } else if (mousePressHistory.size() == 4){
+                                FigureModifier.addPointToPolygon(shapes.get(shapes.size() - 1), mousePressHistory.get(3));
+                                mousePressHistory.remove(0);
+                            }
                             break;
                     }
                     repaint();
