@@ -21,11 +21,10 @@ public class Polygon extends Shape2D {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        super.draw(graphics2D);
+
     }
 
     @Override
     public void move(Point point) {
-        super.move(point);
     }
 }

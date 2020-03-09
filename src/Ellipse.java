@@ -23,7 +23,7 @@ public class Ellipse extends Shape2D {
 
     @Override
     public void move(Point point) {
-        super.move(point);
+
     }
 
     public void setFirstPoint(Point firstPoint) {

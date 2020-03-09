@@ -1,8 +1,6 @@
 import java.awt.Point;
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.util.ArrayList;
-import java.util.List;
 
 public class RegularPolygon extends Polygon {
     private int numSides;
@@ -19,16 +17,6 @@ public class RegularPolygon extends Polygon {
 
     public void setNumSides(int numSides) {
         this.numSides = numSides;
-    }
-
-    @Override
-    public void draw(Graphics2D graphics2D) {
-        super.draw(graphics2D);
-    }
-
-    @Override
-    public void move(Point point) {
-        super.move(point);
     }
 }
 
