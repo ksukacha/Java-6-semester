@@ -3,8 +3,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class Line extends Ray {
-    public Line(Point theCenter, Color borderColor, boolean hasDirection, Point secondPoint) {
-        super(theCenter, borderColor, hasDirection, secondPoint);
+    public Line(Point theCenter, Point secondPoint, Color borderColor, boolean hasDirection) {
+        super(theCenter, secondPoint, borderColor, hasDirection);
 
         if(getSecondPoint().y < getLocation().y) {
             double beta = Math.PI/2 -  Math.atan((double)Math.abs((getLocation().y - getSecondPoint().y))/Math.abs((getSecondPoint().x - getLocation().x)));
